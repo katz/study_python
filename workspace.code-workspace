@@ -3,6 +3,9 @@
 		{
 			"path": "azure-identity-blob"
 		},
+		{
+			"path": "azure-keyvault-flask"
+		}
 
 		{
 			"path": ".",
