@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "azure-identity-blob"
+		},
+
+		{
+			"path": ".",
+			"name": "root"
+		},
+	],
+	"settings": {}
+}
