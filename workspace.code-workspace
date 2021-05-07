@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "azure-keyvault-flask"
+		},
+		{
+			"path": "azure-sqldb-pyodbc"
 		}
 
 		{
