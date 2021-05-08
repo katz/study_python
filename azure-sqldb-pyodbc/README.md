@@ -8,7 +8,8 @@ Azure Identityライブラリを使いアクセストークンを取得しアク
 * ローカル開発環境上ではVisual Studio Codeの[Azure Account拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)でログインした際の資格情報を使う。
 
 
-Azure ADのアクセストークンを使ってAzure SQL Databaseに接続するコードの例はSQLAlchemyのコードコメントに書かれてるので,それに従って実装している。
+Azure ADのアクセストークンを使ってAzure SQL Databaseに接続するコードの例はpyodbcのWikiやSQLAlchemyのコードコメントに書かれてるので、それに従って実装している。
+https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-Linux#connecting
 https://github.com/sqlalchemy/sqlalchemy/blob/rel_1_4_14/lib/sqlalchemy/dialects/mssql/pyodbc.py#L85-L140
 
 

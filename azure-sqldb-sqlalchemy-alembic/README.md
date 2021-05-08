@@ -9,7 +9,8 @@ Azure Identityライブラリを使いアクセストークンを取得しAzure 
 
 
 [sqldb.py](sqldb.py)にSQLAlchemyでAzure SQL Databaseに接続する際にアクセストークンを使う際の実装を書いている。
-Azure ADのアクセストークンを使ってAzure SQL Databaseに接続するコードの例はSQLAlchemyのコードコメントに書かれてるので、基本的にそれに従って実装している。
+Azure ADのアクセストークンを使ってAzure SQL Databaseに接続するコードの例はpyodbcのWikiやSQLAlchemyのコードコメントに書かれてるので、基本的にそれに従って実装している。
+https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-Linux#connecting
 https://github.com/sqlalchemy/sqlalchemy/blob/rel_1_4_14/lib/sqlalchemy/dialects/mssql/pyodbc.py#L85-L140
 
 

@@ -7,7 +7,8 @@ from logging import getLogger
 
 logger = getLogger(__name__)
 
-# Azure ADのトークンを使ってAzure SQL Databaseに接続するコードの例はSQLAlchemyのコードコメントに書かれてる
+# Azure ADのトークンを使ってAzure SQL Databaseに接続するコードの例はpyodbcのWikiやSQLAlchemyのコードコメントに書かれてる
+# https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-Linux#connecting-to-servers-with-access-tokens
 # https://github.com/sqlalchemy/sqlalchemy/blob/rel_1_4_14/lib/sqlalchemy/dialects/mssql/pyodbc.py#L85-L140
 
 
