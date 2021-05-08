@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "azure-sqldb-pyodbc"
+		},
+		{
+			"path": "azure-sqldb-sqlalchemy-alembic"
 		}
 
 		{
