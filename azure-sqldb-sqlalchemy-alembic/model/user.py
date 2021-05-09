@@ -10,14 +10,26 @@ from typing import List, NewType
 UserID = NewType("UserID", ULID)
 
 
-@dataclass
+# SQLAlchemyは変更追跡のために動的にプロパティーを設定するので
+# dataclass(frozen=True)なものと相性が悪く動かない。
+# dataclasses.FrozenInstanceError: cannot assign to field '_sa_instance_state' というエラーになる。
+@dataclass(frozen=True)
 class Email:
+    val: str
+
+    @classmethod
+    def new_email(cls, email: str):
+        return Email(email)
+
+
+@dataclass
+class Contact:
     id: ULID = field(
         init=False,
         default_factory=ulid.new,
     )
     user_id: UserID = field(init=False)
-    email_address: str = field(default="")
+    email_address: Email = field(default=Email(""))
 
 
 @dataclass
@@ -27,7 +39,7 @@ class User:
         default_factory=ulid.new,
     )
     fullname: str = field(default="")
-    emails: List[Email] = field(default_factory=list)
+    contacts: List[Contact] = field(default_factory=list)
 
 
 user_table = Table(
@@ -53,7 +65,7 @@ mapper_registry.map_imperatively(
     properties={
         "id": user_table.c.id,
         "fullname": user_table.c.fullname,
-        "emails": relationship("Email"),
+        "contacts": relationship("Contact"),
     },
     column_prefix="_db_column_",
 )

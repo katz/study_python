@@ -1,4 +1,4 @@
-from model.user import User, Email
+from model.user import User, Contact, Email
 import pprint
 import random
 from logging import getLogger
@@ -9,11 +9,15 @@ from sqlalchemy.orm import sessionmaker
 logger = getLogger(__name__)
 
 # INSERTのテスト用データ作る
-email1 = Email(email_address="test{}@example.com".format(random.randint(1, 10000)))
-email2 = Email(email_address="test{}@example.com".format(random.randint(1, 10000)))
+contact1 = Contact(
+    email_address=Email("test{}@example.com".format(random.randint(1, 10000)))
+)
+contact2 = Contact(
+    email_address=Email("test{}@example.com".format(random.randint(1, 10000)))
+)
 u = User(fullname="テスト太郎{}".format(random.randint(1, 10000)))
-u.emails.append(email1)
-u.emails.append(email2)
+u.contacts.append(contact1)
+u.contacts.append(contact2)
 
 # INSERTする
 engine = get_engine()
