@@ -5,7 +5,9 @@ from dataclasses import dataclass, field
 import ulid
 from . import ULIDType, mapper_registry
 from ulid import ULID
-from typing import List
+from typing import List, NewType
+
+UserID = NewType("UserID", ULID)
 
 
 @dataclass
@@ -14,13 +16,13 @@ class Email:
         init=False,
         default_factory=ulid.new,
     )
-    user_id: ULID = field(init=False)
+    user_id: UserID = field(init=False)
     email_address: str = field(default="")
 
 
 @dataclass
 class User:
-    id: ULID = field(
+    id: UserID = field(
         init=False,
         default_factory=ulid.new,
     )
