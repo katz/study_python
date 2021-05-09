@@ -27,9 +27,7 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 
 # Userはenv.py内で使われないけど、importしておかないとマイグレーションの自動検知対象に入らないからimportしてる
-from model.user import User
-from model import mapper_registry
-
+from model.user import mapper_registry
 
 target_metadata = mapper_registry.metadata
 

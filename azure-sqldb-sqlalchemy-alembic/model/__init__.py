@@ -3,16 +3,8 @@ from sqlalchemy.orm.decl_api import DeclarativeMeta
 import sqlalchemy.types as types
 import ulid
 
+
 mapper_registry = registry()
-
-
-class Base(metaclass=DeclarativeMeta):
-    __abstract__ = True
-
-    # these are supplied by the sqlalchemy2-stubs, so may be omitted
-    # when they are installed
-    registry = mapper_registry
-    metadata = mapper_registry.metadata
 
 
 class ULIDType(types.TypeDecorator):
